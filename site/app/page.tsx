@@ -1,3 +1,36 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Massage Mount Maunganui | Therapeutic Massage & Wellness Studio",
+  description:
+    "Book therapeutic massage in Mount Maunganui with tailored deep tissue, pregnancy massage, hot stone therapy, and restorative wellness treatments.",
+  keywords: [
+    "massage Mount Maunganui",
+    "therapeutic massage Mount Maunganui",
+    "wellness studio Mount Maunganui",
+    "deep tissue massage Mount Maunganui",
+    "pregnancy massage Mount Maunganui",
+  ],
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Massage Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Therapeutic massage and restorative bodywork in Mount Maunganui for tension relief, nervous system support, and premium one-to-one care.",
+    url: "https://matariki-massage-wellness.vercel.app/",
+    siteName: "Matariki Massage & Wellness",
+    type: "website",
+    locale: "en_NZ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Massage Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Therapeutic massage and restorative bodywork in Mount Maunganui for tension relief, nervous system support, and premium one-to-one care.",
+  },
+};
+
 const benefits = [
   {
     title: "Tailored Care",
@@ -19,21 +52,21 @@ const treatments = [
     meta: "60 min from $125",
     copy: "Focused work for persistent tension, desk-tight shoulders, tired backs, and bodies that need deeper release without losing calm.",
     image: "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=800&h=1000&fit=crop",
-    alt: "Massage therapist preparing for a deep tissue treatment",
+    alt: "Deep tissue massage in Mount Maunganui with a therapist preparing a restorative treatment",
   },
   {
     title: "Hot Stone Ritual",
     meta: "90 min from $185",
     copy: "A slower, warming treatment that uses heated stones to melt muscular holding and create a full-body sense of exhale.",
     image: "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=800&h=1000&fit=crop",
-    alt: "Hot stone massage treatment with warm oils and linen",
+    alt: "Hot stone massage treatment in a Mount Maunganui wellness studio with warm oils and linen",
   },
   {
     title: "Pregnancy Massage",
     meta: "60 min from $135",
     copy: "Nurturing support for changing bodies, designed to ease strain, improve comfort, and create restorative rest for parent and pēpi.",
     image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=800&h=1000&fit=crop",
-    alt: "Calm massage space with soft bedding and natural light",
+    alt: "Pregnancy massage room in Mount Maunganui with calming bedding and natural light",
   },
 ];
 
@@ -58,9 +91,9 @@ export default function HomePage() {
       <section className="star-map overflow-hidden bg-[var(--mist)] py-16 md:py-24">
         <div className="section-shell grid gap-12 lg:grid-cols-[1fr_0.92fr] lg:items-center">
           <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Mount Maunganui massage studio</p>
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Therapeutic massage Mount Maunganui</p>
             <h1 className="mt-5 max-w-3xl text-5xl leading-[1.02] md:text-[4rem] md:leading-[1.05]">
-              Restorative bodywork, tailored to how you need to feel.
+              Therapeutic massage in Mount Maunganui for deep relief and grounded wellness.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[rgba(31,36,48,0.78)] md:text-xl">
               Therapeutic massage and ritual-led treatments designed to release tension, calm the nervous system, and create space to recover.
@@ -81,7 +114,7 @@ export default function HomePage() {
             <div className="media-shadow overflow-hidden rounded-[28px]">
               <img
                 src="https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=900&h=1200&fit=crop"
-                alt="Massage studio portrait with candles, soft linen, and warm evening light"
+                alt="Therapeutic massage studio in Mount Maunganui with candles, soft linen, and warm evening light"
                 className="h-[520px] w-full object-cover md:h-[680px]"
               />
             </div>
@@ -109,8 +142,8 @@ export default function HomePage() {
       <section className="bg-white py-20 md:py-24">
         <div className="section-shell">
           <div className="max-w-2xl">
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Signature treatments</p>
-            <h2 className="mt-4 text-4xl md:text-5xl">Bodywork that balances relief with ritual.</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Massage treatments in Mount Maunganui</p>
+            <h2 className="mt-4 text-4xl md:text-5xl">Bodywork that balances therapeutic relief with ritual.</h2>
             <p className="mt-5 text-lg leading-8 text-[rgba(31,36,48,0.74)]">
               Every treatment is delivered with intuitive pacing, refined technique, and a calm atmosphere that lets the body release without being rushed.
             </p>
@@ -141,7 +174,7 @@ export default function HomePage() {
         <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--gold)]">Studio experience</p>
-            <h2 className="mt-4 text-4xl text-white md:text-5xl">A restorative local studio designed for slower, more thoughtful care.</h2>
+            <h2 className="mt-4 text-4xl text-white md:text-5xl">A restorative massage studio in Mount Maunganui designed for slower, more thoughtful care.</h2>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[rgba(238,231,224,0.78)]">
               Matariki Massage & Wellness was created for people who want tailored treatment in an environment that feels intimate, grounded, and unhurried. Sessions begin with listening and end with practical guidance so the benefits last beyond the table.
             </p>
@@ -166,7 +199,7 @@ export default function HomePage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=1200&h=800&fit=crop"
-              alt="Warm interior of a serene boutique wellness studio"
+              alt="Boutique massage and wellness studio interior in Mount Maunganui with warm natural materials"
               className="h-[480px] w-full object-cover"
             />
           </div>
@@ -178,7 +211,7 @@ export default function HomePage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1516589091380-5d601971c3f1?w=1100&h=700&fit=crop"
-              alt="Beautifully wrapped gift and wellness voucher styling"
+              alt="Massage gift voucher presentation in Mount Maunganui with refined wrapping and wellness styling"
               className="h-[380px] w-full object-cover"
             />
           </div>
@@ -205,7 +238,7 @@ export default function HomePage() {
             <div className="overflow-hidden rounded-[24px] media-shadow lg:w-[320px]">
               <img
                 src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=800&h=600&fit=crop"
-                alt="Ambient candlelit wellness scene with calm evening mood"
+                alt="Calm massage studio ambience with candlelit wellness styling in Mount Maunganui"
                 className="h-[220px] w-full object-cover"
               />
             </div>

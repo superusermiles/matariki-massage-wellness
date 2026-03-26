@@ -1,3 +1,35 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Treatments | Deep Tissue, Pregnancy & Hot Stone Massage",
+  description:
+    "Explore therapeutic massage treatments in Mount Maunganui including deep tissue massage, pregnancy massage, hot stone therapy, and longer restorative sessions.",
+  keywords: [
+    "deep tissue massage Mount Maunganui",
+    "pregnancy massage Mount Maunganui",
+    "hot stone massage Mount Maunganui",
+    "therapeutic massage treatments Mount Maunganui",
+  ],
+  alternates: {
+    canonical: "/treatments/",
+  },
+  openGraph: {
+    title: "Massage Treatments in Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Find the right therapeutic massage treatment in Mount Maunganui, from deep tissue relief to pregnancy massage and hot stone therapy.",
+    url: "https://matariki-massage-wellness.vercel.app/treatments/",
+    siteName: "Matariki Massage & Wellness",
+    type: "website",
+    locale: "en_NZ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Massage Treatments in Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Find the right therapeutic massage treatment in Mount Maunganui, from deep tissue relief to pregnancy massage and hot stone therapy.",
+  },
+};
+
 const treatments = [
   {
     title: "Therapeutic Reset",
@@ -7,7 +39,7 @@ const treatments = [
       "A personalised full-body massage for people carrying everyday stress, desk tension, or general fatigue. Ideal for regular maintenance and a grounded reset.",
     image:
       "https://images.unsplash.com/photo-1515377905703-c4788e51af15?w=1200&h=900&fit=crop",
-    alt: "Massage therapist preparing treatment oils and towels for a restorative session",
+    alt: "Therapeutic massage treatment in Mount Maunganui with oils and towels prepared for a restorative session",
   },
   {
     title: "Deep Tissue Release",
@@ -17,7 +49,7 @@ const treatments = [
       "Targeted deeper work for shoulders, lower back, hips, and other areas that need focused attention. Designed to relieve persistent muscular tension while keeping the body calm.",
     image:
       "https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&h=900&fit=crop",
-    alt: "Hot stone and massage treatment scene in a refined wellness studio",
+    alt: "Deep tissue massage and hot stone therapy scene in a Mount Maunganui wellness studio",
   },
   {
     title: "Pregnancy Nurture",
@@ -27,7 +59,7 @@ const treatments = [
       "Supportive massage tailored for pregnancy discomfort, with careful positioning and soothing technique to ease pressure through the back, hips, and legs.",
     image:
       "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1200&h=900&fit=crop",
-    alt: "Softly lit massage room prepared for a nurturing prenatal treatment",
+    alt: "Pregnancy massage room in Mount Maunganui prepared for a nurturing prenatal treatment",
   },
   {
     title: "Hot Stone Ritual",
@@ -37,7 +69,7 @@ const treatments = [
       "A warming treatment that combines massage and heated stones to encourage circulation, soften held tension, and create a slower, deeply exhaling treatment experience.",
     image:
       "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=1200&h=900&fit=crop",
-    alt: "Ambient boutique wellness room with warm tones and restorative atmosphere",
+    alt: "Hot stone massage room in Mount Maunganui with warm tones and restorative atmosphere",
   },
   {
     title: "Extended Restoration",
@@ -47,7 +79,7 @@ const treatments = [
       "For clients who want more time to unwind and address multiple areas without rushing. This longer session allows detailed therapeutic work with time for integration.",
     image:
       "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&h=900&fit=crop",
-    alt: "Calming studio detail with linen, candlelight, and natural textures",
+    alt: "Mount Maunganui wellness studio detail with linen, candlelight, and natural textures for restorative massage",
   },
 ];
 
@@ -65,7 +97,7 @@ export default function TreatmentsPage() {
         <div className="section-shell grid gap-10 lg:grid-cols-[0.95fr_1.05fr] lg:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Treatments</p>
-            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">Massage sessions shaped around what your body needs most.</h1>
+            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">Massage treatments in Mount Maunganui shaped around what your body needs most.</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[rgba(31,36,48,0.76)]">
               Every treatment is personalised on the day. Choose the session length that suits your energy, recovery needs, and the amount of support your body is asking for.
             </p>
@@ -73,7 +105,7 @@ export default function TreatmentsPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1200&h=900&fit=crop"
-              alt="Warm wellness studio interior with soft light and inviting treatment setting"
+              alt="Therapeutic massage studio in Mount Maunganui with soft light and inviting treatment setting"
               className="h-[520px] w-full object-cover"
             />
           </div>
@@ -117,7 +149,7 @@ export default function TreatmentsPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1513694203232-719a280e022f?w=1200&h=900&fit=crop"
-              alt="Ambient candlelit treatment styling with a calm evening mood"
+              alt="Mount Maunganui massage studio ambience with candlelit treatment styling and calm evening mood"
               className="h-[460px] w-full object-cover"
             />
           </div>

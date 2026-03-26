@@ -2,6 +2,64 @@ import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
 import "./globals.css";
 
+const siteUrl = "https://matariki-massage-wellness.vercel.app";
+const businessName = "Matariki Massage & Wellness";
+const defaultTitle = "Matariki Massage & Wellness | Therapeutic Massage Mount Maunganui";
+const defaultDescription =
+  "Boutique therapeutic massage in Mount Maunganui for deep tissue relief, pregnancy massage, hot stone therapy, and thoughtful wellness treatments.";
+const seoKeywords = [
+  "massage Mount Maunganui",
+  "therapeutic massage Mount Maunganui",
+  "deep tissue massage Mount Maunganui",
+  "pregnancy massage Mount Maunganui",
+  "hot stone massage Mount Maunganui",
+  "wellness studio Mount Maunganui",
+  "massage Tauranga",
+  "massage Papamoa",
+  "gift vouchers massage Mount Maunganui",
+  "boutique massage studio New Zealand",
+];
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  name: businessName,
+  image: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1600&h=900&fit=crop",
+  description: defaultDescription,
+  url: siteUrl,
+  telephone: "+64 21 555 0182",
+  email: "hello@matarikiwellness.co.nz",
+  priceRange: "$$$",
+  address: {
+    "@type": "PostalAddress",
+    addressLocality: "Mount Maunganui",
+    addressRegion: "Bay of Plenty",
+    addressCountry: "NZ",
+  },
+  areaServed: [
+    { "@type": "City", name: "Mount Maunganui" },
+    { "@type": "City", name: "Tauranga" },
+    { "@type": "City", name: "Papamoa" },
+  ],
+  openingHoursSpecification: [
+    {
+      "@type": "OpeningHoursSpecification",
+      dayOfWeek: ["Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+      opens: "09:00",
+      closes: "18:00",
+    },
+  ],
+  appointmentOnly: true,
+  serviceType: [
+    "Therapeutic massage",
+    "Deep tissue massage",
+    "Pregnancy massage",
+    "Hot stone massage",
+    "Wellness treatments",
+    "Gift vouchers",
+  ],
+};
+
 const cormorant = Cormorant_Garamond({
   variable: "--font-heading",
   subsets: ["latin"],
@@ -15,22 +73,21 @@ const manrope = Manrope({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://matariki-massage-wellness.vercel.app"),
-  title: {
-    default: "Matariki Massage & Wellness | Mount Maunganui Massage Studio",
-    template: "%s | Matariki Massage & Wellness",
+  metadataBase: new URL(siteUrl),
+  title: defaultTitle,
+  description: defaultDescription,
+  keywords: seoKeywords,
+  alternates: {
+    canonical: siteUrl,
   },
-  description:
-    "Restorative massage and ritual-led bodywork in Mount Maunganui. Book tailored treatments, gift vouchers, and calm, considered care.",
   icons: {
     icon: "/favicon.svg",
   },
   openGraph: {
-    title: "Matariki Massage & Wellness",
-    description:
-      "Tailored bodywork for rest, release, and renewal in a boutique Mount Maunganui studio.",
-    url: "https://matariki-massage-wellness.vercel.app",
-    siteName: "Matariki Massage & Wellness",
+    title: defaultTitle,
+    description: defaultDescription,
+    url: siteUrl,
+    siteName: businessName,
     locale: "en_NZ",
     type: "website",
     images: [
@@ -38,9 +95,19 @@ export const metadata: Metadata = {
         url: "https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1600&h=900&fit=crop",
         width: 1600,
         height: 900,
-        alt: "Serene massage setting with soft linen and candlelight tones",
+        alt: "Therapeutic massage studio in Mount Maunganui with calm linen and candlelight",
       },
     ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: defaultTitle,
+    description: defaultDescription,
+    images: ["https://images.unsplash.com/photo-1519823551278-64ac92734fb1?w=1600&h=900&fit=crop"],
+  },
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
@@ -106,6 +173,10 @@ export default function RootLayout({
   return (
     <html lang="en-NZ" className={`${cormorant.variable} ${manrope.variable} scroll-smooth`}>
       <body className="bg-[var(--mist)] text-[var(--night)] antialiased">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
+        />
         <header className="sticky top-0 z-50 border-b border-black/5 bg-[rgba(238,231,224,0.86)] backdrop-blur-xl">
           <div className="section-shell flex items-center justify-between gap-6 py-4">
             <Logo />

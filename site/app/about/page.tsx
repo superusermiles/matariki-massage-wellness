@@ -1,3 +1,34 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About | Massage Studio Mount Maunganui",
+  description:
+    "Learn about Matariki Massage & Wellness, a boutique massage studio in Mount Maunganui offering therapeutic massage with calm, tailored care.",
+  keywords: [
+    "about massage studio Mount Maunganui",
+    "boutique massage studio Mount Maunganui",
+    "therapeutic massage Mount Maunganui",
+  ],
+  alternates: {
+    canonical: "/about/",
+  },
+  openGraph: {
+    title: "About Matariki Massage & Wellness | Mount Maunganui Massage Studio",
+    description:
+      "Discover the grounded approach behind this Mount Maunganui massage studio, where tailored bodywork meets calm, thoughtful care.",
+    url: "https://matariki-massage-wellness.vercel.app/about/",
+    siteName: "Matariki Massage & Wellness",
+    type: "website",
+    locale: "en_NZ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About Matariki Massage & Wellness | Mount Maunganui Massage Studio",
+    description:
+      "Discover the grounded approach behind this Mount Maunganui massage studio, where tailored bodywork meets calm, thoughtful care.",
+  },
+};
+
 const pillars = [
   {
     title: "Listen First",
@@ -23,15 +54,15 @@ const reasons = [
 const gallery = [
   {
     src: "https://images.unsplash.com/photo-1494526585095-c41746248156?w=700&h=700&fit=crop",
-    alt: "Soft-toned studio interior with linen and natural textures",
+    alt: "Boutique massage studio interior in Mount Maunganui with linen and natural textures",
   },
   {
     src: "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=700&h=700&fit=crop",
-    alt: "Warm tea and wellness details arranged in a calming studio corner",
+    alt: "Wellness tea and calming studio details inside a Mount Maunganui massage space",
   },
   {
     src: "https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=700&h=700&fit=crop",
-    alt: "Boutique wellness room with ambient lighting and natural materials",
+    alt: "Ambient massage room in Mount Maunganui with warm lighting and natural materials",
   },
 ];
 
@@ -42,7 +73,7 @@ export default function AboutPage() {
         <div className="section-shell grid gap-10 lg:grid-cols-[1fr_0.88fr] lg:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">About the studio</p>
-            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">A quieter kind of care.</h1>
+            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">About our Mount Maunganui massage studio and calmer way of caring.</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[rgba(31,36,48,0.76)]">
               Matariki Massage & Wellness offers thoughtful bodywork rooted in listening, rhythm, and recovery. The studio was shaped to feel intimate and grounded, with enough space for you to slow down before the treatment even begins.
             </p>
@@ -50,7 +81,7 @@ export default function AboutPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?w=900&h=1100&fit=crop"
-              alt="Founder-style portrait detail conveying calm and thoughtful care"
+              alt="Mount Maunganui massage therapist portrait detail conveying calm and thoughtful care"
               className="h-[520px] w-full object-cover"
             />
           </div>
@@ -82,7 +113,7 @@ export default function AboutPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=1200&h=800&fit=crop"
-              alt="Natural coastal landscape reflecting calm, rhythm, and spaciousness"
+              alt="Coastal Mount Maunganui landscape reflecting calm, rhythm, and restorative space"
               className="h-[440px] w-full object-cover"
             />
           </div>
@@ -112,7 +143,7 @@ export default function AboutPage() {
               <div key={reason} className="rounded-[18px] border border-white/10 bg-white/5 p-6">
                 <img
                   src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&h=520&fit=crop"
-                  alt="Wellness detail with soft linen and candlelight textures"
+                  alt="Mount Maunganui massage studio detail with linen, candlelight, and premium textures"
                   className="mb-4 h-36 w-full rounded-[14px] object-cover"
                 />
                 <p className="text-lg capitalize text-white">{reason}</p>

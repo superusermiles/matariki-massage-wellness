@@ -1,3 +1,35 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact | Book a Massage Mount Maunganui",
+  description:
+    "Book a massage in Mount Maunganui or enquire about therapeutic massage, pregnancy massage, gift vouchers, and personalised wellness treatments.",
+  keywords: [
+    "book massage Mount Maunganui",
+    "contact massage studio Mount Maunganui",
+    "pregnancy massage Mount Maunganui booking",
+    "massage gift voucher enquiry Mount Maunganui",
+  ],
+  alternates: {
+    canonical: "/contact/",
+  },
+  openGraph: {
+    title: "Book a Massage in Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Get in touch to book therapeutic massage in Mount Maunganui or ask about treatments, gift vouchers, and appointment options.",
+    url: "https://matariki-massage-wellness.vercel.app/contact/",
+    siteName: "Matariki Massage & Wellness",
+    type: "website",
+    locale: "en_NZ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Book a Massage in Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Get in touch to book therapeutic massage in Mount Maunganui or ask about treatments, gift vouchers, and appointment options.",
+  },
+};
+
 const contactDetails = [
   "Mount Maunganui, New Zealand",
   "Tue–Sat, 9am–6pm",
@@ -20,7 +52,7 @@ export default function ContactPage() {
         <div className="section-shell grid gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-start">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Contact / Book</p>
-            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">Book your session or get in touch.</h1>
+            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">Book your massage in Mount Maunganui or get in touch.</h1>
             <p className="mt-6 max-w-xl text-lg leading-8 text-[rgba(31,36,48,0.76)]">
               If you’re unsure what to choose, we can help. Reach out with what your body has been carrying lately and we’ll guide you toward the right treatment length and approach.
             </p>
@@ -65,7 +97,7 @@ export default function ContactPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&h=800&fit=crop"
-              alt="Serene studio room with warm neutrals, seating, and natural light"
+              alt="Mount Maunganui massage studio room with warm neutrals, seating, and natural light"
               className="h-[420px] w-full object-cover"
             />
           </div>
@@ -101,7 +133,7 @@ export default function ContactPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1494526585095-c41746248156?w=800&h=600&fit=crop"
-              alt="Wellness detail image with calm textures and natural materials"
+              alt="Wellness detail image for Mount Maunganui massage bookings with calm textures and natural materials"
               className="h-[420px] w-full object-cover"
             />
           </div>

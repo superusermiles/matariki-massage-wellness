@@ -1,3 +1,34 @@
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Gift Vouchers | Massage Gift Cards Mount Maunganui",
+  description:
+    "Buy massage gift vouchers in Mount Maunganui for therapeutic massage, wellness treatments, and thoughtful gift giving with digital or studio-ready options.",
+  keywords: [
+    "massage gift vouchers Mount Maunganui",
+    "gift cards massage Mount Maunganui",
+    "wellness gift vouchers Tauranga",
+  ],
+  alternates: {
+    canonical: "/gift-vouchers/",
+  },
+  openGraph: {
+    title: "Massage Gift Vouchers in Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Choose massage gift vouchers in Mount Maunganui for birthdays, thank-yous, new parents, and calm, genuinely useful gifting.",
+    url: "https://matariki-massage-wellness.vercel.app/gift-vouchers/",
+    siteName: "Matariki Massage & Wellness",
+    type: "website",
+    locale: "en_NZ",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Massage Gift Vouchers in Mount Maunganui | Matariki Massage & Wellness",
+    description:
+      "Choose massage gift vouchers in Mount Maunganui for birthdays, thank-yous, new parents, and calm, genuinely useful gifting.",
+  },
+};
+
 const voucherOptions = [
   {
     title: "Dollar-value voucher",
@@ -5,7 +36,7 @@ const voucherOptions = [
       "Choose any amount and let your recipient book the treatment that suits them best. A flexible option for birthdays, thank-yous, and group gifting.",
     image:
       "https://images.unsplash.com/photo-1516589091380-5d601971c3f1?w=1200&h=900&fit=crop",
-    alt: "Beautifully wrapped gift styling with ribbon and a soft wellness feel",
+    alt: "Massage gift voucher in Mount Maunganui with ribbon and a soft wellness feel",
   },
   {
     title: "Signature treatment voucher",
@@ -13,7 +44,7 @@ const voucherOptions = [
       "Gift a 60, 90, or 120 minute treatment for someone who would benefit from dedicated time to rest, recover, and feel looked after.",
     image:
       "https://images.unsplash.com/photo-1511920170033-f8396924c348?w=1200&h=900&fit=crop",
-    alt: "Tea, card, and calm studio details arranged as a thoughtful gift moment",
+    alt: "Mount Maunganui wellness gift setup with tea, card, and calm studio details",
   },
   {
     title: "Digital or studio-ready",
@@ -21,7 +52,7 @@ const voucherOptions = [
       "Receive your voucher by email for quick gifting, or request a beautifully presented version ready to give in person.",
     image:
       "https://images.unsplash.com/photo-1494526585095-c41746248156?w=1200&h=900&fit=crop",
-    alt: "Elegant wellness flat lay with linen and candlelight textures",
+    alt: "Elegant massage gift card presentation with linen and candlelight textures",
   },
 ];
 
@@ -34,7 +65,7 @@ export default function GiftVouchersPage() {
         <div className="section-shell grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
           <div>
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Gift vouchers</p>
-            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">A thoughtful gift for someone who needs space to exhale.</h1>
+            <h1 className="mt-5 text-5xl leading-[1.04] md:text-6xl">Massage gift vouchers in Mount Maunganui for thoughtful, restorative giving.</h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-[rgba(31,36,48,0.76)]">
               Matariki gift vouchers are designed for meaningful giving — practical, beautiful, and centred on rest. Choose a treatment, select a value, and we’ll help make it easy to give well.
             </p>
@@ -42,7 +73,7 @@ export default function GiftVouchersPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1516589091380-5d601971c3f1?w=1200&h=1000&fit=crop"
-              alt="Gift box and voucher-inspired styling with a refined wellness aesthetic"
+              alt="Massage gift voucher box in Mount Maunganui with a refined wellness aesthetic"
               className="h-[520px] w-full object-cover"
             />
           </div>
@@ -68,7 +99,7 @@ export default function GiftVouchersPage() {
           <div className="media-shadow overflow-hidden rounded-[28px]">
             <img
               src="https://images.unsplash.com/photo-1507652313519-d4e9174996dd?w=1200&h=900&fit=crop"
-              alt="Warm ambient wellness room that reflects the experience behind the gift"
+              alt="Warm Mount Maunganui wellness room reflecting the massage experience behind the gift voucher"
               className="h-[430px] w-full object-cover"
             />
           </div>
