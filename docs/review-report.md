@@ -1,5 +1,5 @@
 # Review Report: Matariki Massage & Wellness
-**Status: PASS**
+**Status: FAIL**
 **Live URL:** https://matariki-massage-wellness.vercel.app
 
 ## Checklist
@@ -7,14 +7,12 @@
 - [x] Content matches brief
 - [x] All pages exist and render
 - [x] SEO baseline met (meta tags, schema)
-- [x] No placeholder text
+- [ ] No placeholder text
 
 ## Issues Found
-- No blocking issues found in the targeted rework review.
-- Verified mobile navigation is implemented as a hamburger menu below 960px via `site/app/MobileNav.tsx` and desktop navigation remains hidden below that breakpoint in `site/app/layout.tsx`.
-- Verified Treatments page includes Add-ons / rituals and FAQ in `site/app/treatments/page.tsx`.
-- Verified Gift Vouchers page includes How it works and FAQ in `site/app/gift-vouchers/page.tsx`.
-- Verified contact form posts to FormSubmit with required fields and redirect target configured in `site/app/contact/page.tsx`.
+- `site/app/contact/page.tsx`: Contact form points `_next` to `/contact/thank-you/`, but there is no corresponding page in `site/app/contact/thank-you` and no exported route in the app tree. This breaks the claimed working submission path after successful form submission.
+- `site/app/contact/page.tsx`: Form uses `https://formsubmit.co/hello@matarikiwellness.co.nz`, but the review could not verify a complete live submission flow without sending a real enquiry. Combined with the missing thank-you route, this remains a blocking QA failure.
+- `docs/review-report.md`: Current verdict remains FAIL because the requested rework item "contact form has a working submission path" is not fully resolved.
 
 ## Verdict
-PASS. The live Vercel site is accessible and the targeted rework items are present and aligned with the brief and design spec. Mobile navigation has been corrected to a hamburger interaction below 960px, the Treatments and Gift Vouchers pages include the required added sections, the contact page exposes a configured submission flow, and the baseline SEO setup is in place through page metadata plus LocalBusiness schema in `site/app/layout.tsx`.
+The live site is up, the mobile navigation implementation now switches below 960px, and the Treatments and Gift Vouchers pages include the previously missing add-ons, rituals, how-it-works, and FAQ content. SEO basics are in place in `site/app/layout.tsx` and key pages render on the live Vercel URL. The rework still fails final QA because the contact form submission path is incomplete: the form redirects to `/contact/thank-you/`, but that page does not exist in the app, so the post-submit experience is broken.
