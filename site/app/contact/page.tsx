@@ -40,10 +40,16 @@ const contactDetails = [
 
 const bookingMethods = [
   {
+    title: "Hosted enquiry form",
+    detail: "Send your booking request online",
+    copy:
+      "Use the hosted form below to share your preferred treatment, ideal session length, timing, and any injuries, pregnancy notes, or voucher questions. You’ll land on a thank-you page once your enquiry is sent.",
+  },
+  {
     title: "Email the studio",
     detail: "hello@matarikiwellness.co.nz",
     copy:
-      "Reach out with your preferred treatment, ideal session length, and a little about what your body needs right now. We’ll reply during studio hours with the next step.",
+      "Prefer email? Reach out with your preferred treatment, ideal session length, and a little about what your body needs right now. We’ll reply during studio hours with the next step.",
     href: "mailto:hello@matarikiwellness.co.nz",
     label: "Email hello@matarikiwellness.co.nz",
   },
@@ -54,14 +60,6 @@ const bookingMethods = [
       "If you would rather talk through timings, pregnancy-safe support, or voucher options, call or send a message and we’ll help you choose well.",
     href: "tel:+64215550182",
     label: "Call +64 21 555 0182",
-  },
-  {
-    title: "Book by appointment",
-    detail: "Tuesday to Saturday · 9am–6pm",
-    copy:
-      "Sessions are arranged by appointment only, keeping arrival times calm, private, and tailored to each guest.",
-    href: "/treatments/",
-    label: "Explore treatments before booking",
   },
 ];
 
@@ -99,7 +97,7 @@ export default function ContactPage() {
             <p className="text-sm uppercase tracking-[0.3em] text-[var(--clay)]">Booking methods and hours</p>
             <h2 className="mt-4 text-4xl">Choose the contact style that feels easiest.</h2>
             <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">
-              The studio books directly by email or phone, so you can ask questions, mention injuries or pregnancy, and choose the right session without a rushed checkout flow.
+              The studio offers a hosted enquiry form for online requests, along with direct email and phone contact if you’d rather book in a more personal way.
             </p>
             <div className="mt-8 grid gap-4">
               {bookingMethods.map((method) => (
@@ -110,43 +108,182 @@ export default function ContactPage() {
                       <h3 className="mt-3 text-2xl text-[var(--night)]">{method.detail}</h3>
                       <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">{method.copy}</p>
                     </div>
-                    <a
-                      href={method.href}
-                      className="inline-flex rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
-                    >
-                      {method.label}
-                    </a>
+                    {method.href ? (
+                      <a
+                        href={method.href}
+                        className="inline-flex rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                      >
+                        {method.label}
+                      </a>
+                    ) : (
+                      <a
+                        href="#enquiry-form"
+                        className="inline-flex rounded-full bg-[var(--night)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                      >
+                        Go to hosted form
+                      </a>
+                    )}
                   </div>
                 </article>
               ))}
             </div>
             <div className="mt-6 rounded-[18px] bg-[var(--sand)] px-5 py-4 text-sm leading-7 text-[rgba(31,36,48,0.76)]">
-              Prefer to start with a simple note? Email hello@matarikiwellness.co.nz with your preferred days, ideal treatment, and any relevant injuries, pregnancy notes, or voucher questions.
+              Online enquiries are sent through a hosted form and redirect to a dedicated thank-you page once submitted.
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white py-20 md:py-24">
-        <div className="section-shell grid gap-10 lg:grid-cols-[1.05fr_0.95fr] lg:items-center">
-          <div className="media-shadow overflow-hidden rounded-[28px]">
-            <img
-              src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&h=800&fit=crop"
-              alt="Mount Maunganui massage studio room with warm neutrals, seating, and natural light"
-              className="h-[420px] w-full object-cover"
-            />
-          </div>
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Studio location</p>
-            <h2 className="mt-4 text-4xl md:text-5xl">Easy to arrive, easy to settle.</h2>
-            <p className="mt-5 text-lg leading-8 text-[rgba(31,36,48,0.74)]">
-              The studio is based in Mount Maunganui and operates by appointment only. You’ll receive the full address with your booking confirmation, along with arrival details so your visit feels calm from the outset.
+      <section id="enquiry-form" className="bg-white py-20 md:py-24">
+        <div className="section-shell grid gap-10 lg:grid-cols-[1.02fr_0.98fr] lg:items-start">
+          <div className="card-surface soft-shadow rounded-[28px] p-8 md:p-10">
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--clay)]">Hosted enquiry form</p>
+            <h2 className="mt-4 text-4xl md:text-5xl">Tell us what kind of care you’re looking for.</h2>
+            <p className="mt-4 max-w-2xl leading-8 text-[rgba(31,36,48,0.74)]">
+              Complete the hosted enquiry form below to request your appointment, ask about a treatment, or organise a gift voucher. Include anything that will help us tailor your session well from the start.
             </p>
-            <div className="mt-6 rounded-[18px] bg-[var(--mist)] p-6 soft-shadow">
-              <p className="text-sm uppercase tracking-[0.24em] text-[var(--clay)]">Arrival notes</p>
-              <p className="mt-3 leading-8 text-[rgba(31,36,48,0.74)]">
-                Street parking is available nearby. Please arrive a few minutes early to settle in, and avoid heavy meals immediately before your session if possible.
+            <form
+              className="mt-8 grid gap-5"
+              action="https://formsubmit.co/hello@matarikiwellness.co.nz"
+              method="POST"
+            >
+              <input type="hidden" name="_subject" value="New Matariki Massage enquiry" />
+              <input
+                type="hidden"
+                name="_next"
+                value="https://matariki-massage-wellness.vercel.app/contact/thank-you/"
+              />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_template" value="table" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Thank you for your enquiry. Matariki Massage & Wellness will be in touch during studio hours with the next step for your booking or question."
+              />
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                  Full name
+                  <input
+                    type="text"
+                    name="name"
+                    required
+                    className="min-h-12 rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                    placeholder="Your name"
+                  />
+                </label>
+                <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                  Email address
+                  <input
+                    type="email"
+                    name="email"
+                    required
+                    className="min-h-12 rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                    placeholder="you@example.com"
+                  />
+                </label>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                  Phone number
+                  <input
+                    type="tel"
+                    name="phone"
+                    className="min-h-12 rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                    placeholder="+64 …"
+                  />
+                </label>
+                <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                  Preferred treatment
+                  <select
+                    name="treatment"
+                    defaultValue=""
+                    className="min-h-12 rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                  >
+                    <option value="" disabled>
+                      Select a treatment
+                    </option>
+                    <option>Therapeutic Massage</option>
+                    <option>Deep Tissue Release</option>
+                    <option>Hot Stone Ritual</option>
+                    <option>Pregnancy Massage</option>
+                    <option>Recovery Session</option>
+                    <option>Gift Voucher</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+              </div>
+
+              <div className="grid gap-5 md:grid-cols-2">
+                <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                  Ideal session length
+                  <select
+                    name="session_length"
+                    defaultValue=""
+                    className="min-h-12 rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                  >
+                    <option value="" disabled>
+                      Choose a duration
+                    </option>
+                    <option>45 minutes</option>
+                    <option>60 minutes</option>
+                    <option>90 minutes</option>
+                    <option>120 minutes</option>
+                    <option>Not sure yet</option>
+                  </select>
+                </label>
+                <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                  Preferred days or times
+                  <input
+                    type="text"
+                    name="preferred_times"
+                    className="min-h-12 rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                    placeholder="e.g. Fridays after 2pm"
+                  />
+                </label>
+              </div>
+
+              <label className="grid gap-2 text-sm font-semibold text-[var(--night)]">
+                What would you like support with?
+                <textarea
+                  name="message"
+                  required
+                  rows={6}
+                  className="rounded-[18px] border border-[rgba(31,36,48,0.14)] bg-[var(--mist)] px-4 py-3 text-base font-normal text-[var(--night)] outline-none transition focus:border-[var(--moss)]"
+                  placeholder="Tell us about tension patterns, recovery goals, pregnancy notes, injuries, voucher questions, or anything else that will help tailor your session."
+                />
+              </label>
+
+              <button
+                type="submit"
+                className="inline-flex w-full justify-center rounded-full bg-[var(--moss)] px-6 py-4 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] sm:w-fit"
+              >
+                Send enquiry
+              </button>
+            </form>
+          </div>
+
+          <div className="space-y-8">
+            <div className="media-shadow overflow-hidden rounded-[28px]">
+              <img
+                src="https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?w=1000&h=800&fit=crop"
+                alt="Mount Maunganui massage studio room with warm neutrals, seating, and natural light"
+                className="h-[420px] w-full object-cover"
+              />
+            </div>
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Studio location</p>
+              <h2 className="mt-4 text-4xl md:text-5xl">Easy to arrive, easy to settle.</h2>
+              <p className="mt-5 text-lg leading-8 text-[rgba(31,36,48,0.74)]">
+                The studio is based in Mount Maunganui and operates by appointment only. You’ll receive the full address with your booking confirmation, along with arrival details so your visit feels calm from the outset.
               </p>
+              <div className="mt-6 rounded-[18px] bg-[var(--mist)] p-6 soft-shadow">
+                <p className="text-sm uppercase tracking-[0.24em] text-[var(--clay)]">Arrival notes</p>
+                <p className="mt-3 leading-8 text-[rgba(31,36,48,0.74)]">
+                  Street parking is available nearby. Please arrive a few minutes early to settle in, and avoid heavy meals immediately before your session if possible.
+                </p>
+              </div>
             </div>
           </div>
         </div>
