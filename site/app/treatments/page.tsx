@@ -171,9 +171,9 @@ export default function TreatmentsPage() {
           <div className="grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
             <div>
               <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Add-ons / rituals</p>
-              <h2 className="mt-4 text-4xl md:text-5xl">Small additions that deepen the feeling of care.</h2>
+              <h2 className="mt-4 text-4xl md:text-5xl">Add-ons and rituals for a more tailored treatment.</h2>
               <p className="mt-5 max-w-xl text-lg leading-8 text-[rgba(31,36,48,0.74)]">
-                Choose a ritual add-on if you want more warmth, sensory grounding, or targeted tension release woven into your treatment. These additions are available with qualifying sessions and can be requested when you book.
+                These optional additions bring extra warmth, sensory grounding, or focused head-and-neck relief to your session. Request them when booking so your treatment can be prepared with care.
               </p>
             </div>
             <div className="media-shadow overflow-hidden rounded-[28px]">
@@ -189,7 +189,8 @@ export default function TreatmentsPage() {
               <article key={ritual.title} className="rounded-[24px] bg-white p-6 soft-shadow">
                 <div className="flex items-start justify-between gap-4">
                   <div>
-                    <h3 className="text-2xl">{ritual.title}</h3>
+                    <p className="text-sm uppercase tracking-[0.24em] text-[var(--moss)]">Optional ritual</p>
+                    <h3 className="mt-3 text-2xl">{ritual.title}</h3>
                     <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">{ritual.copy}</p>
                   </div>
                   <p className="rounded-full bg-[var(--sand)] px-4 py-2 text-sm font-semibold text-[var(--night)]">{ritual.price}</p>

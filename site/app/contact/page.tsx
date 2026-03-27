@@ -38,6 +38,33 @@ const contactDetails = [
   "By appointment only",
 ];
 
+const bookingMethods = [
+  {
+    title: "Email the studio",
+    detail: "hello@matarikiwellness.co.nz",
+    copy:
+      "Reach out with your preferred treatment, ideal session length, and a little about what your body needs right now. We’ll reply during studio hours with the next step.",
+    href: "mailto:hello@matarikiwellness.co.nz",
+    label: "Email hello@matarikiwellness.co.nz",
+  },
+  {
+    title: "Call or text",
+    detail: "+64 21 555 0182",
+    copy:
+      "If you would rather talk through timings, pregnancy-safe support, or voucher options, call or send a message and we’ll help you choose well.",
+    href: "tel:+64215550182",
+    label: "Call +64 21 555 0182",
+  },
+  {
+    title: "Book by appointment",
+    detail: "Tuesday to Saturday · 9am–6pm",
+    copy:
+      "Sessions are arranged by appointment only, keeping arrival times calm, private, and tailored to each guest.",
+    href: "/treatments/",
+    label: "Explore treatments before booking",
+  },
+];
+
 const preparationNotes = [
   "arrive 5 minutes early",
   "hydrate well after treatment",
@@ -69,69 +96,33 @@ export default function ContactPage() {
             </div>
           </div>
           <div className="card-surface soft-shadow rounded-[28px] p-8 md:p-10">
-            <h2 className="text-4xl">Send an enquiry</h2>
+            <p className="text-sm uppercase tracking-[0.3em] text-[var(--clay)]">Booking methods and hours</p>
+            <h2 className="mt-4 text-4xl">Choose the contact style that feels easiest.</h2>
             <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">
-              Use the live hosted form below to send your enquiry. After submitting, you’ll be taken to a dedicated thank-you page on the live site while your message is delivered to the studio inbox.
+              The studio books directly by email or phone, so you can ask questions, mention injuries or pregnancy, and choose the right session without a rushed checkout flow.
             </p>
-            <form
-              className="mt-8 grid gap-5"
-              action="https://formsubmit.co/hello@matarikiwellness.co.nz"
-              method="POST"
-            >
-              <input type="hidden" name="_subject" value="New Matariki Massage enquiry" />
-              <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_template" value="table" />
-              <input type="hidden" name="_next" value="https://matariki-massage-wellness.vercel.app/contact/thank-you/" />
-              <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Matariki Massage & Wellness. Your enquiry has been received and we will reply during studio hours with the next steps." />
-              <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
-                Name
-                <input
-                  type="text"
-                  name="name"
-                  autoComplete="name"
-                  aria-label="Your full name"
-                  required
-                  className="rounded-[14px] border border-[rgba(31,36,48,0.12)] bg-white px-4 py-3 outline-none"
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
-                Email
-                <input
-                  type="email"
-                  name="email"
-                  autoComplete="email"
-                  aria-label="Your email address"
-                  required
-                  className="rounded-[14px] border border-[rgba(31,36,48,0.12)] bg-white px-4 py-3 outline-none"
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
-                Phone
-                <input
-                  type="tel"
-                  name="phone"
-                  autoComplete="tel"
-                  aria-label="Your phone number"
-                  className="rounded-[14px] border border-[rgba(31,36,48,0.12)] bg-white px-4 py-3 outline-none"
-                />
-              </label>
-              <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
-                What would you like help with?
-                <textarea
-                  name="message"
-                  rows={5}
-                  aria-label="Tell us about your treatment or voucher enquiry"
-                  required
-                  className="rounded-[14px] border border-[rgba(31,36,48,0.12)] bg-white px-4 py-3 outline-none"
-                />
-              </label>
-              <div className="rounded-[18px] bg-[var(--sand)] px-5 py-4 text-sm leading-7 text-[rgba(31,36,48,0.76)]">
-                This is a working live-site enquiry form. After you submit, you’ll land on the Matariki thank-you page and the studio receives your message by email. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
-              </div>
-              <button type="submit" className="rounded-full bg-[var(--moss)] px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5">
-                Send Enquiry
-              </button>
-            </form>
+            <div className="mt-8 grid gap-4">
+              {bookingMethods.map((method) => (
+                <article key={method.title} className="rounded-[22px] border border-[rgba(31,36,48,0.08)] bg-white p-6 soft-shadow">
+                  <div className="flex flex-wrap items-start justify-between gap-4">
+                    <div className="max-w-xl">
+                      <p className="text-sm uppercase tracking-[0.24em] text-[var(--moss)]">{method.title}</p>
+                      <h3 className="mt-3 text-2xl text-[var(--night)]">{method.detail}</h3>
+                      <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">{method.copy}</p>
+                    </div>
+                    <a
+                      href={method.href}
+                      className="inline-flex rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5"
+                    >
+                      {method.label}
+                    </a>
+                  </div>
+                </article>
+              ))}
+            </div>
+            <div className="mt-6 rounded-[18px] bg-[var(--sand)] px-5 py-4 text-sm leading-7 text-[rgba(31,36,48,0.76)]">
+              Prefer to start with a simple note? Email hello@matarikiwellness.co.nz with your preferred days, ideal treatment, and any relevant injuries, pregnancy notes, or voucher questions.
+            </div>
           </div>
         </div>
       </section>
