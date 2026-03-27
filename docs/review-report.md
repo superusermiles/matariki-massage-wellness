@@ -10,8 +10,8 @@
 - [x] No placeholder text
 
 ## Issues Found
-- `site/app/contact/page.tsx:76-131` — Contact page still presents a mailto-based enquiry flow. The live site copy says “Send your enquiry by email” and “Selecting send opens your email app...”, which means the form does not submit as a working live-site form.
-- `site/app/treatments/page.tsx:169-192` — The source now includes an **Add-ons / rituals** section, but the live Treatments page still renders the older **Included in every visit** block instead of the required rituals/add-ons content. Live deployment is not showing the requested fix.
+- `site/app/contact/page.tsx:76-129` — Source now posts to `https://formsubmit.co/hello@matarikiwellness.co.nz`, but the live Contact page still says “Send your enquiry by email” and “Selecting send opens your email app...”, which indicates the targeted mailto-style flow is still what users get on the public site rather than the required live-site form experience.
+- `site/app/treatments/page.tsx:169-192` — Source now includes the required **Add-ons / rituals** section, but the live Treatments page still shows the older **Included in every visit** block. The requested rituals/add-ons content is not live.
 
 ## Verdict
-FAIL. The site is live, core pages render, SEO basics are in place, and the Treatments source contains the new Add-ons / rituals section. But the live Vercel site still fails the targeted re-review: the Contact page remains a mailto flow instead of a functioning on-site form, and the live Treatments page is still serving outdated content without the required Add-ons / rituals section. The rework is not fully deployed or not fully implemented on the public site.
+FAIL. The site is live, pages render, and the source files contain the intended fixes, including SEO baseline support in `site/app/layout.tsx`. But the public Vercel site still fails the targeted re-review: the Contact page is still presenting the old email-app flow to users, and the Treatments page is still serving outdated content without the required Add-ons / rituals section. The live deployment does not match the reworked source.
