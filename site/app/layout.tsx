@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Cormorant_Garamond, Manrope } from "next/font/google";
+import MobileNav from "./MobileNav";
 import "./globals.css";
 
 const siteUrl = "https://matariki-massage-wellness.vercel.app";
@@ -180,24 +181,21 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 border-b border-black/5 bg-[rgba(238,231,224,0.86)] backdrop-blur-xl">
           <div className="section-shell flex items-center justify-between gap-6 py-4">
             <Logo />
-            <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--night)] lg:flex">
+            <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--night)] xl:flex">
               {navLinks.map((link) => (
                 <a key={link.href} href={link.href} className="transition hover:text-[var(--moss)]">
                   {link.label}
                 </a>
               ))}
             </nav>
-            <a href="/contact/" className="hidden rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] md:inline-flex">
-              Book a Session
-            </a>
-          </div>
-          <div className="border-t border-black/5 lg:hidden">
-            <div className="section-shell flex snap-x gap-5 overflow-x-auto py-3 text-sm text-[var(--night)]">
-              {navLinks.map((link) => (
-                <a key={link.href} href={link.href} className="shrink-0 rounded-full border border-[var(--sand)] px-4 py-2">
-                  {link.label}
-                </a>
-              ))}
+            <div className="flex items-center gap-3">
+              <a href="/contact/" className="hidden rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] md:inline-flex xl:hidden">
+                Book
+              </a>
+              <a href="/contact/" className="hidden rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] xl:inline-flex">
+                Book a Session
+              </a>
+              <MobileNav />
             </div>
           </div>
         </header>
