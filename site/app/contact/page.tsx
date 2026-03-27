@@ -80,11 +80,8 @@ export default function ContactPage() {
             >
               <input type="hidden" name="_subject" value="New Matariki Massage enquiry" />
               <input type="hidden" name="_captcha" value="false" />
-              <input
-                type="hidden"
-                name="_next"
-                value="https://matariki-massage-wellness.vercel.app/contact/?submitted=true"
-              />
+              <input type="hidden" name="_template" value="table" />
+              <input type="hidden" name="_next" value="https://matariki-massage-wellness.vercel.app/contact/thank-you/" />
               <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
                 Name
                 <input
@@ -128,7 +125,7 @@ export default function ContactPage() {
                 />
               </label>
               <div className="rounded-[18px] bg-[var(--sand)] px-5 py-4 text-sm leading-7 text-[rgba(31,36,48,0.76)]">
-                Your enquiry is sent through a static-form submission service and delivered to hello@matarikiwellness.co.nz. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
+                Your enquiry is sent through a live hosted form flow and delivered to hello@matarikiwellness.co.nz. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
               </div>
               <button type="submit" className="rounded-full bg-[var(--moss)] px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                 Send Enquiry

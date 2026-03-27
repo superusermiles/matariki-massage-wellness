@@ -167,15 +167,24 @@ export default function TreatmentsPage() {
       </section>
 
       <section className="py-20 md:py-24">
-        <div className="section-shell grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
-          <div>
-            <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Add-ons / rituals</p>
-            <h2 className="mt-4 text-4xl md:text-5xl">Small additions that deepen the feeling of care.</h2>
-            <p className="mt-5 max-w-xl text-lg leading-8 text-[rgba(31,36,48,0.74)]">
-              Add a ritual element to your treatment if you want a little more warmth, sensory grounding, or tension release through the scalp and nervous system.
-            </p>
+        <div className="section-shell space-y-10">
+          <div className="grid gap-10 lg:grid-cols-[0.98fr_1.02fr] lg:items-center">
+            <div>
+              <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Add-ons / rituals</p>
+              <h2 className="mt-4 text-4xl md:text-5xl">Small additions that deepen the feeling of care.</h2>
+              <p className="mt-5 max-w-xl text-lg leading-8 text-[rgba(31,36,48,0.74)]">
+                Add a ritual element to your treatment if you want a little more warmth, sensory grounding, or tension release through the scalp and nervous system.
+              </p>
+            </div>
+            <div className="media-shadow overflow-hidden rounded-[28px]">
+              <img
+                src="https://images.unsplash.com/photo-1544161515-4ab6ce6db874?w=1200&h=900&fit=crop"
+                alt="Add-on ritual setup with hot towels and warm massage stones in a calming wellness studio"
+                className="h-[360px] w-full object-cover"
+              />
+            </div>
           </div>
-          <div className="grid gap-4">
+          <div className="grid gap-4 md:grid-cols-3">
             {rituals.map((ritual) => (
               <article key={ritual.title} className="rounded-[24px] bg-white p-6 soft-shadow">
                 <div className="flex items-start justify-between gap-4">
