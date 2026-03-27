@@ -4,16 +4,16 @@
 
 ## Checklist
 - [x] Site is live and accessible
-- [x] Content matches brief
+- [ ] Content matches brief
 - [x] All pages exist and render
 - [x] SEO baseline met (meta tags, schema)
 - [x] No placeholder text
 
 ## Issues Found
-- `/home/bob/workspace/matariki-massage-wellness/site/app/contact/page.tsx:70-90` — The contact form still has no action, no submit handler, and no visible success/error path. On the live site it presents as a working enquiry form, but it does not submit anywhere, so the required contact flow is still broken.
-- `/home/bob/workspace/matariki-massage-wellness/site/app/treatments/page.tsx:93-170` — The Treatments page now has the intro, treatment list, inclusions section, and CTA, but it is still missing the required add-ons / rituals section and FAQ section from the design spec.
-- `/home/bob/workspace/matariki-massage-wellness/site/app/gift-vouchers/page.tsx:61-135` — The Gift Vouchers page includes the hero, voucher options, and CTA, but it is still missing the required “How it works” and FAQ sections from the design spec.
-- `/home/bob/workspace/matariki-massage-wellness/site/app/layout.tsx:194-201` — Mobile navigation still does not match the specified hamburger behavior below 960px. It renders as a horizontal scroll link strip instead.
+- `site/app/layout.tsx:183-202` — Mobile navigation still does not use a hamburger pattern below 960px. The live site shows a horizontal scrollable link strip on mobile/tablet instead of the specified collapsed hamburger behavior.
+- `site/app/treatments/page.tsx:136-170` — Treatments page is still missing the required **Add-ons / rituals** section and the required **FAQ** section from the design spec. The live page only includes an "Included in every visit" section and a CTA.
+- `site/app/gift-vouchers/page.tsx:97-134` — Gift Vouchers page is still missing the required **How it works** section and the required **FAQ** section from the design spec. The live page shows a "Perfect for" section and CTA instead.
+- `site/app/contact/page.tsx:70-90` — Contact form is still non-functional. The form has no action, no client submit handler, no validation, and no success/error state, so submissions cannot work on the live site.
 
 ## Verdict
-The site is live, the previous visible placeholder copy issue appears resolved, and the core brand/content direction still matches the brief. However, final QA still fails because the contact form remains non-functional, required sections are still missing on Treatments and Gift Vouchers, and the mobile navigation behavior still does not match the design spec. Contact is improved in structure, but the key conversion path is not actually working yet.
+FAIL. The site is live and the baseline SEO setup is present, but the targeted rework items are not fixed on the live Vercel site. The contact form still cannot submit, the Treatments page still lacks the required Add-ons / rituals and FAQ sections, the Gift Vouchers page still lacks the required How it works and FAQ sections, and the mobile navigation still uses a horizontal link strip instead of the specified hamburger menu below 960px.
