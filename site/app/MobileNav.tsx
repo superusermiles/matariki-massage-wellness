@@ -14,10 +14,14 @@ const navLinks = [
 
 export default function MobileNav() {
   const [isOpen, setIsOpen] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
 
   useEffect(() => {
     const handleResize = () => {
-      if (window.innerWidth >= DESKTOP_BREAKPOINT) {
+      const mobile = window.innerWidth < DESKTOP_BREAKPOINT;
+      setIsMobile(mobile);
+
+      if (!mobile) {
         setIsOpen(false);
       }
     };
@@ -36,8 +40,12 @@ export default function MobileNav() {
     };
   }, [isOpen]);
 
+  if (!isMobile) {
+    return null;
+  }
+
   return (
-    <div className="xl:hidden">
+    <div className="lg:hidden">
       <button
         type="button"
         className="group inline-flex h-12 w-12 items-center justify-center rounded-full border border-[rgba(31,36,48,0.12)] bg-white/80 text-[var(--night)] transition hover:border-[var(--moss)]"

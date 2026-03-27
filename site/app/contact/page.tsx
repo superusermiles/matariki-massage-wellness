@@ -51,7 +51,13 @@ const visitNotes = [
   "Your confirmation email includes the full address and arrival details before your session.",
 ];
 
-export default function ContactPage() {
+export default function ContactPage({
+  searchParams,
+}: {
+  searchParams?: { enquiry?: string };
+}) {
+  const enquirySent = searchParams?.enquiry === "sent";
+
   return (
     <main>
       <section className="py-16 md:py-24">
@@ -71,13 +77,19 @@ export default function ContactPage() {
           <div className="card-surface soft-shadow rounded-[28px] p-8 md:p-10">
             <h2 className="text-4xl">Send an enquiry</h2>
             <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">
-              Use the enquiry form below and your message will open as a pre-filled email to hello@matarikiwellness.co.nz, making the submission flow clear and functional on static hosting.
+              Use the enquiry form below and your message will be submitted through our hosted contact form before returning you to this page.
             </p>
+            {enquirySent ? (
+              <div className="mt-6 rounded-[18px] border border-[rgba(102,122,110,0.2)] bg-[rgba(102,122,110,0.12)] px-5 py-4 text-sm leading-7 text-[var(--night)]">
+                Thank you. Your enquiry has been sent and we’ll be in touch soon.
+              </div>
+            ) : null}
             <form className="mt-8 grid gap-5" action="https://formsubmit.co/hello@matarikiwellness.co.nz" method="POST">
               <input type="hidden" name="_subject" value="Website enquiry — Matariki Massage & Wellness" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value="https://matariki-massage-wellness.vercel.app/contact/?enquiry=sent" />
+              <input type="hidden" name="_autoresponse" value="Thanks for reaching out to Matariki Massage & Wellness. Your enquiry has been received and we’ll reply as soon as possible." />
               <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
                 Name
                 <input
@@ -121,7 +133,7 @@ export default function ContactPage() {
                 />
               </label>
               <div className="rounded-[18px] bg-[var(--sand)] px-5 py-4 text-sm leading-7 text-[rgba(31,36,48,0.76)]">
-                After you submit, your enquiry is sent through a hosted form flow and returns you to this contact page. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
+                Submit your details here for a live hosted form experience on the website. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
               </div>
               <button type="submit" className="rounded-full bg-[var(--moss)] px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                 Send Enquiry

@@ -181,7 +181,7 @@ export default function RootLayout({
         <header className="sticky top-0 z-50 border-b border-black/5 bg-[rgba(238,231,224,0.86)] backdrop-blur-xl">
           <div className="section-shell flex items-center justify-between gap-6 py-4">
             <Logo />
-            <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--night)] xl:flex">
+            <nav className="hidden items-center gap-8 text-sm font-medium text-[var(--night)] min-[960px]:flex">
               {navLinks.map((link) => (
                 <a key={link.href} href={link.href} className="transition hover:text-[var(--moss)]">
                   {link.label}
@@ -189,10 +189,7 @@ export default function RootLayout({
               ))}
             </nav>
             <div className="flex items-center gap-3">
-              <a href="/contact/" className="hidden rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] md:inline-flex xl:hidden">
-                Book
-              </a>
-              <a href="/contact/" className="hidden rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] xl:inline-flex">
+              <a href="/contact/" className="hidden rounded-full bg-[var(--moss)] px-5 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:shadow-[0_16px_32px_rgba(31,36,48,0.16)] min-[960px]:inline-flex">
                 Book a Session
               </a>
               <MobileNav />
