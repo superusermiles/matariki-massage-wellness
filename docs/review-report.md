@@ -13,4 +13,4 @@
 - None.
 
 ## Verdict
-PASS. The live site is accessible and aligned to the brief, all core pages render, baseline SEO metadata and schema are present, and there is no placeholder copy. The targeted contact-form rework is live on the public Contact page: a hosted enquiry form is present on `https://matariki-massage-wellness.vercel.app/contact/`, the page copy confirms a hosted submission flow, the source in `site/app/contact/page.tsx:145-157` posts to FormSubmit and redirects to `https://matariki-massage-wellness.vercel.app/contact/thank-you/`, and the public thank-you page renders successfully.
+PASS. The public Contact page now clearly shows a hosted enquiry form flow and the prior issue is resolved. The live page at `https://matariki-massage-wellness.vercel.app/contact/` includes visible enquiry fields and copy explaining the hosted submission flow and thank-you redirect, the public thank-you page at `https://matariki-massage-wellness.vercel.app/contact/thank-you/` renders successfully, and the implementation in `site/app/contact/page.tsx` presents the hosted form section while `site/app/layout.tsx` continues to provide baseline metadata and schema support.
