@@ -10,9 +10,9 @@
 - [x] No placeholder text
 
 ## Issues Found
-- `https://matariki-massage-wellness.vercel.app/contact/` no longer presents a live hosted enquiry form. The page only offers email and phone contact, so the previously targeted hosted form flow is not available on the live site.
-- `site/app/contact/page.tsx` is not represented by a live hosted form experience on the deployed Contact page, so the requested fix for the contact form flow cannot be confirmed as resolved from the live site.
-- The Treatments page fix is resolved: `https://matariki-massage-wellness.vercel.app/treatments/` now renders the Add-ons / rituals section with three add-on cards.
+- `site/app/contact/page.tsx:98` through `site/app/contact/page.tsx:125` renders booking method cards and helper copy only. There is no live hosted enquiry form on `https://matariki-massage-wellness.vercel.app/contact/`, so the requested contact form submission flow cannot be exercised on the public site.
+- `site/app/contact/thank-you/page.tsx:16` exists and `https://matariki-massage-wellness.vercel.app/contact/thank-you/` renders successfully, but nothing on the live Contact page submits into that route. The thank-you page is orphaned from the live booking flow.
+- `site/app/contact/page.tsx` does not contain a `<form>` or submit action for enquiries, so the rework does not resolve the requested hosted form submission flow.
 
 ## Verdict
-FAIL. The site is live, the Treatments page add-ons / rituals section is present, core pages render, and the baseline SEO implementation remains in place. But the Contact page fix does not pass re-review because the live deployed page does not expose a hosted enquiry form flow at all. Since the task specifically required confirming the Contact page live hosted form flow and that key issue is still not verifiable on the public site, the review remains failed.
+FAIL. The site is live, core pages render, the content remains aligned to the brief, the Treatments add-ons section is present, and metadata/schema coverage is in place. But the required recheck was specifically to confirm the contact form submission flow and `/contact/thank-you/` if used. The live Contact page still offers only email and phone actions, with no hosted enquiry form to submit and no navigable path into the thank-you page, so that requested fix is not complete.
