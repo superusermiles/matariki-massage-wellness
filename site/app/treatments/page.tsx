@@ -173,7 +173,7 @@ export default function TreatmentsPage() {
               <p className="text-sm uppercase tracking-[0.3em] text-[var(--moss)]">Add-ons / rituals</p>
               <h2 className="mt-4 text-4xl md:text-5xl">Small additions that deepen the feeling of care.</h2>
               <p className="mt-5 max-w-xl text-lg leading-8 text-[rgba(31,36,48,0.74)]">
-                Add a ritual element to your treatment if you want a little more warmth, sensory grounding, or tension release through the scalp and nervous system.
+                Choose a ritual add-on if you want more warmth, sensory grounding, or targeted tension release woven into your treatment. These additions are available with qualifying sessions and can be requested when you book.
               </p>
             </div>
             <div className="media-shadow overflow-hidden rounded-[28px]">

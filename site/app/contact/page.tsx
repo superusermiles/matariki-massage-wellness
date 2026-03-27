@@ -71,7 +71,7 @@ export default function ContactPage() {
           <div className="card-surface soft-shadow rounded-[28px] p-8 md:p-10">
             <h2 className="text-4xl">Send an enquiry</h2>
             <p className="mt-4 leading-8 text-[rgba(31,36,48,0.74)]">
-              Use the form below to send your enquiry directly through FormSubmit. We’ll receive your message by email and reply with the next steps.
+              Use the live hosted form below to send your enquiry. After submitting, you’ll be taken to a dedicated thank-you page on the live site while your message is delivered to the studio inbox.
             </p>
             <form
               className="mt-8 grid gap-5"
@@ -82,6 +82,7 @@ export default function ContactPage() {
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_template" value="table" />
               <input type="hidden" name="_next" value="https://matariki-massage-wellness.vercel.app/contact/thank-you/" />
+              <input type="hidden" name="_autoresponse" value="Thank you for reaching out to Matariki Massage & Wellness. Your enquiry has been received and we will reply during studio hours with the next steps." />
               <label className="grid gap-2 text-sm font-medium text-[var(--night)]">
                 Name
                 <input
@@ -125,7 +126,7 @@ export default function ContactPage() {
                 />
               </label>
               <div className="rounded-[18px] bg-[var(--sand)] px-5 py-4 text-sm leading-7 text-[rgba(31,36,48,0.76)]">
-                Your enquiry is sent through a live hosted form flow and delivered to hello@matarikiwellness.co.nz. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
+                This is a working live-site enquiry form. After you submit, you’ll land on the Matariki thank-you page and the studio receives your message by email. Prefer direct contact instead? Email hello@matarikiwellness.co.nz or call +64 21 555 0182.
               </div>
               <button type="submit" className="rounded-full bg-[var(--moss)] px-6 py-3.5 text-sm font-semibold text-white transition hover:-translate-y-0.5">
                 Send Enquiry
